@@ -1,0 +1,11 @@
+<nb-card>
+  <nb-card-body>
+    <div class="mb-3">
+      <button type="button" class="btn btn-primary" (click)="saveFormItem()">Save</button>
+    </div>
+
+    <form-builder [form]="form"></form-builder>
+  </nb-card-body>
+</nb-card>
+<hr />
+<pre>{{ form | json }}</pre>
