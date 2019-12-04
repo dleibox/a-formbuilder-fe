@@ -6,8 +6,12 @@ export const MENU_ITEMS: NbMenuItem[] = [
     icon: 'edit-2-outline',
     children: [
       {
-        title: 'Form Builder',
+        title: 'Form List',
         link: '/pages/formbuilder',
+      },
+      {
+        title: 'Form Builder',
+        link: '/pages/formbuilder/upsert',
       },
       {
         title: 'Form Render',

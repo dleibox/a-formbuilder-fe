@@ -1,19 +1,24 @@
-import { Component } from '@angular/core';
-import { FormBuilderService } from '../services/form-builder.service';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilderService } from '../../services/form-builder.service';
 
 @Component({
-  templateUrl: './form-builder.page.html'
+  templateUrl: './form-builder.upsert.page.html'
 })
-export class FormBuilderPage {
+export class FormBuilderUpsertPage implements OnInit {
   form = {
     components: []
   };
 
   constructor(private svc: FormBuilderService) {}
 
+  ngOnInit(): void {
+    this.getFormItem();
+  }
+
   getFormItem() {
     this.svc.getFormItem('10001').subscribe(item => {
       console.log('getFormItem', item);
+      this.form = JSON.parse(item.json);
     });
   }
 

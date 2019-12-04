@@ -7,6 +7,10 @@ export class FormBuilderService {
   private api = 'http://localhost:8080/formitems';
   constructor(private http: HttpClient) {}
 
+  getFormItems(): Observable<any> {
+    return this.http.get(`${this.api}`);
+  }
+
   getFormItem(id: string): Observable<any> {
     return this.http.get(`${this.api}/${id}`);
   }
