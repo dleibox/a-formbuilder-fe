@@ -1,19 +1,21 @@
-import { NgModule } from '@angular/core';
-import { NbButtonModule, NbCardModule } from '@nebular/theme';
-import { FormioModule, FormioAppConfig } from 'angular-formio';
-import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { NgModule } from "@angular/core";
+import { NbButtonModule, NbCardModule } from "@nebular/theme";
+import { FormioModule, FormioAppConfig } from "angular-formio";
+import { Ng2SmartTableModule } from "ng2-smart-table";
 
-import { ThemeModule } from '../../@theme/theme.module';
-import { FormBuilderRoutingModule } from './form-builder-routing.module';
+import { ThemeModule } from "../../@theme/theme.module";
+import { FormBuilderRoutingModule } from "./form-builder-routing.module";
 
-import { AppConfig } from './form-builder.config';
-import { FormBuilderListPage } from './pages/list/form-builder.list.page';
-import { FormBuilderUpsertPage } from './pages/upsert/form-builder.upsert.page';
-import { FormBuilderRenderPage } from './pages/render/form-builder.render.page';
-import { FormBuilderService } from './services/form-builder.service';
+import { AppConfig } from "./form-builder.config";
+import { FormBuilderListPage } from "./pages/list/form-builder.list.page";
+import { FormBuilderUpsertPage } from "./pages/upsert/form-builder.upsert.page";
+import { FormBuilderRenderPage } from "./pages/render/form-builder.render.page";
+import { FormBuilderService } from "./services/form-builder.service";
+import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   imports: [
+    ReactiveFormsModule,
     ThemeModule,
     NbCardModule,
     NbButtonModule,
@@ -21,7 +23,11 @@ import { FormBuilderService } from './services/form-builder.service';
     FormioModule,
     FormBuilderRoutingModule
   ],
-  declarations: [FormBuilderListPage, FormBuilderUpsertPage, FormBuilderRenderPage],
+  declarations: [
+    FormBuilderListPage,
+    FormBuilderUpsertPage,
+    FormBuilderRenderPage
+  ],
   providers: [
     // { provide: FormioAppConfig, useValue: AppConfig },
     FormBuilderService

@@ -1,22 +1,29 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilderService } from '../../services/form-builder.service';
+import { Component, OnInit } from "@angular/core";
+import { FormBuilderService } from "../../services/form-builder.service";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
-  templateUrl: './form-builder.render.page.html'
+  templateUrl: "./form-builder.render.page.html"
 })
 export class FormBuilderRenderPage implements OnInit {
-  form: any;
+  form: any = {};
 
-  constructor(private svc: FormBuilderService) {}
+  constructor(private route: ActivatedRoute, private svc: FormBuilderService) {}
 
   ngOnInit(): void {
-    this.getFormItem();
+    this.route.paramMap.subscribe(params => {
+      this.form.id = +params.get("id");
+      if(this.form.id <= 0) {
+        throw 'No form';
+      }
+      this.getFormItem(this.form.id);
+    });
   }
 
-  getFormItem() {
-    this.svc.getFormItem('10001').subscribe(item => {
-      console.log('getFormItem', item);
-      this.form = JSON.parse(item.json);
+  getFormItem(id: number) {
+    this.svc.getFormItem(id).subscribe(item => {
+      this.form = item;
+      // this.form = JSON.parse(item.json);
     });
   }
 }

@@ -1,10 +1,33 @@
 <nb-card>
   <nb-card-body>
+    <div class="alert alert-success" role="alert" *ngIf="saved">
+      Saved successfully!
+    </div>
     <div class="mb-3">
-      <button type="button" class="btn btn-primary" (click)="saveFormItem()">Save</button>
+      <div class="form-group row">
+        <label for="formTitle" class="col-1 col-form-label">Form Title</label>
+        <div class="col-9">
+          <input
+            id="formTitle"
+            class="form-control"
+            type="text"
+            placeholder="Form Title"
+            [formControl]="formTitleCtrl"
+          />
+        </div>
+        <div class="col-2">
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="saveFormItem()"
+          >
+            Save
+          </button>
+        </div>
+      </div>
     </div>
 
-    <form-builder [form]="form"></form-builder>
+    <form-builder [form]="form.json"></form-builder>
   </nb-card-body>
 </nb-card>
 <hr />

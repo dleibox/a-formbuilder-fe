@@ -15,7 +15,15 @@ const routes: Routes = [
     component: FormBuilderUpsertPage
   },
   {
+    path: 'upsert/:id',
+    component: FormBuilderUpsertPage
+  },
+  {
     path: 'render',
+    component: FormBuilderRenderPage
+  },
+  {
+    path: 'render/:id',
     component: FormBuilderRenderPage
   }
 ];

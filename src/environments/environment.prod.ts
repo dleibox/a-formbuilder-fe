@@ -5,4 +5,5 @@
  */
 export const environment = {
   production: true,
+  dbUrl: 'http://api.form.dlei.ca/api/v1'
 };
