@@ -1,0 +1,9 @@
+:host {
+    nb-card-body {
+        overflow: inherit;
+    }
+
+    ::ng-deep .builder-sidebar_scroll {
+        top: 100px;
+    }
+}

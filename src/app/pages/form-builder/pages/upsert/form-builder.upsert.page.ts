@@ -5,7 +5,8 @@ import { FormControl } from "@angular/forms";
 import { Subscription } from "rxjs";
 
 @Component({
-  templateUrl: "./form-builder.upsert.page.html"
+  templateUrl: "./form-builder.upsert.page.html",
+  styleUrls: ["form-builder.upsert.page.scss"]
 })
 export class FormBuilderUpsertPage implements OnInit, OnDestroy {
   sub: Subscription = new Subscription();
