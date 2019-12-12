@@ -13,10 +13,10 @@ export const MENU_ITEMS: NbMenuItem[] = [
         title: 'Form Builder',
         link: '/pages/formbuilder/upsert',
       },
-      {
-        title: 'Form Render',
-        link: '/pages/formbuilder/render',
-      },
+      // {
+      //   title: 'Form Render',
+      //   link: '/pages/formbuilder/render',
+      // },
     ],
   },
   {
